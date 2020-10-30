@@ -6,6 +6,7 @@
   basically do whatever you want with this code.
 
   This example prints the current CO2 level, relative humidity, and temperature in C.
+  Demo video available at https://youtu.be/frOVlIDNgKs
 
   Hardware Connections:
   Attach MZ20 badge to computer using a USB cable.
