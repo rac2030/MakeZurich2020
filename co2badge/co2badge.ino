@@ -9,13 +9,31 @@
 
   Hardware Connections:
   Attach MZ20 badge to computer using a USB cable.
-  Connect SCD30 sensor to the right side shitty addon port on the badge.
+  Connect SCD30 sensor to X1 (the right side) shitty addon port on the badge.
     Find the datasheet at https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/9.5_CO2/Sensirion_CO2_Sensors_SCD30_Datasheet.pdf
     Connect VDD to the first pin in upper row (left to right)
     Connect GND to the first pin in the lower row
     Connect SCL to the second pin on the lower row
     Connect SDA to the second pin on the upper row
+
+    ___
+    |(SDC30)
+    |
+    |
+    |SEL|
+    |PWM|
+    |RDY|                 (X1)
+    |SDA|-------------------|
+    |SCL|-\     -----[VCC][SDA][RX]
+    |GND|--\---/-----[GND][SCL][TX]
+    |VDD|---\-/             |
+    ___      ---------------|
+
   Open Serial Monitor at 115200 baud.
+
+  Possible enhancements:
+  - Connect RDY PIN to a GPIO on the nano and use interrupt to trigger when data is ready
+    instead of having a fixed duty cycle
 */
 
 #include <Wire.h>
